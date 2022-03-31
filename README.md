@@ -5,7 +5,7 @@ O projeto JAVA INICIANTE é uma iniciativa da <a href="https://github.com/stepha
 ## Repositório
 
 Esse repositório contém os projetos realizados durante as aulas de ESTRUTURAS DE DADOS Fundamentais em Java ministradas pelo 
-[Italo Piovan](https://github.com/Italoko)
+[Italo Piovan](https://github.com/Italoko).
 
 ### Estruturas de dados
 
