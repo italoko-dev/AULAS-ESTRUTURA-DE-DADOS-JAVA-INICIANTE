@@ -20,28 +20,28 @@ public class LinkedList {
     public void insert(Object data){
         
         No no = new No(data);
-        if(head == null) // Nossa está vazia.
+        if(head == null) // 1º caso: Está vazia.
             head = no;
-        else{ //ja tem elemento.
-            No aux = head;
+        else{ //2º caso: Ja tem elemento.
+            No aux = head; // Faz "ponteiro aux" apontar para primeiro da lista.
             
-            while(aux.getProx()!= null)
+            while(aux.getProx()!= null) // Percorre até o ultimo elemento.
                 aux = aux.getProx();
             
-            aux.setProx(no);
+            aux.setProx(no); // Faz a ligação do novo elemento com o ultimo.
         }
     }
     
     public boolean alter(int pos, Object data){
         
-        No aux = head;
-        for (int i = 0; aux!= null && i < pos; i++) {
+        No aux = head; //Faz "ponteiro aux" apontar para primeiro da lista.
+        for (int i = 0; aux!= null && i < pos; i++) { //Percorre até encontrar ou quando acabar a lista.
             aux = aux.getProx();
         }
         
-        if(aux != null)
+        if(aux != null) // Encontrou ?
         {
-            aux.setData(data);
+            aux.setData(data); // Altera os dados.
             return true;
         }
         return false;  
@@ -49,12 +49,12 @@ public class LinkedList {
     
     public boolean  remove(int pos){
         
-        if(head != null) // tem alguém na lista?
+        if(head != null) // 1º caso: Tem elemento na lista?
         {
-            if(head.getProx() == null) //1 possibilidade , só tem 1 elemento ?
+            if(head.getProx() == null) //2º caso: Só tem 1 elemento ?
                 head = null;
             else{
-                if(pos == 0)
+                if(pos == 0) //3º caso: É o primeiro ?
                     head = head.getProx();
                 else
                 {
@@ -66,9 +66,9 @@ public class LinkedList {
                         aux = aux.getProx();
                     }
 
-                    if(aux != null) // Meio ou Final.
+                    if(aux != null) //4º caso: É está no meio ou final.
                     {
-                        ant.setProx(aux.getProx());
+                        ant.setProx(aux.getProx()); // Faz do ant->prox com aux->prox (isolando o aux).
                         return true;
                     }
                 }
